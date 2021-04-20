@@ -18,3 +18,13 @@ spec:
         name: helloweb
         ports:
         - containerPort: 80
+        volumeMounts:
+          - mountPath: /usr/share/nginx/html
+            name: html-content-config
+            subPath: index.html
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: helloweb-config
+            optional: false
+          name: html-content-config
