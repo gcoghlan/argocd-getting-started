@@ -1,0 +1,9 @@
+kind: Kustomization
+configMapGenerator:
+  - name: helloweb-config
+    files:
+      - index.html
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
